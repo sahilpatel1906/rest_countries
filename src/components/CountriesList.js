@@ -2,7 +2,7 @@ const CountriesList = ({countries, handleVisit}) => {
 
     const countryElems = countries.map((country, index) => {
         return (
-            <div key={index}>
+            <div key={country.cca3}>
                 <li>{country.name.common}</li>
                 <label name="isVisited" />
                 <input type={"checkbox"} name="isVisited" value={index} onChange={handleVisit} />
