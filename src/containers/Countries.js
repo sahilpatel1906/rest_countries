@@ -21,8 +21,9 @@ const Countries = () => {
     const handleVisit = (e) => {
         if(e.target.checked){
             let visited = [...visitedCountries, countries[e.target.value]];
-            countries.splice(e.target.value, 1)
-            setCountries(countries)
+            let array = [...countries];
+            array.splice(e.target.value, 1)
+            setCountries(array)
             setVisitedCountries(visited)
             console.log(countries[0])
         }
@@ -31,9 +32,10 @@ const Countries = () => {
     const handleRemoveVisit = (e) => {
         if(e.target.checked){
             let notVisited = [...countries, visitedCountries[e.target.value]];
-            visitedCountries.splice(e.target.value, 1)
+            let array = [...visitedCountries];
+            array.splice(e.target.value, 1)
             setCountries(notVisited)
-            setVisitedCountries(visitedCountries)
+            setVisitedCountries(array)
         }
     }
 
